@@ -19,7 +19,14 @@ function reverseArray(array)
 
 function reverseArrayInPlace(array)
 {
-	array.reverse();
+	reverseIndex = array.length - 1;
+	for (var index = 0; index < reverseIndex; index++)
+	{
+		var temp = array[index];
+		array[index] = array[reverseIndex];
+		array[reverseIndex] = temp;
+		reverseIndex--;
+	}
 }
 
 console.log(reverseArray(["A", "B", "C"]));
