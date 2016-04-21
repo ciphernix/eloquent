@@ -17,4 +17,16 @@ ancestry.forEach(function(person) {
   byName[person.name] = person;
 });
 
+//filter all of the people with mothers
+function hasKnownMother(person)
+{
+	return person['mother'] in byName;
+}
 
+function mothersAge(person)
+{
+	return person['born'] - byName[person['mother']]['born'];
+}
+
+//ancestry.filter(hasKnownMother);
+console.log(average(ancestry.filter(hasKnownMother).map(mothersAge)));
