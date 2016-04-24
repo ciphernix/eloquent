@@ -39,6 +39,7 @@ var byCentury = groupBy(ancestry, function(person){
 
 for (century in byCentury)
 {
-	var ages = byCentury[century].map(function(person){return (person.died - person.born)});
+	var ages = byCentury[century].map(function(person){
+		return (person.died -person.born)});
 	console.log(century + " : " + average(ages));
 }
